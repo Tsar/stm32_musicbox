@@ -52,7 +52,7 @@ void startMusic(
     } else {
       delay = (speaker1NoteNum < VOICE1_NOTES_COUNT) ? speaker1NoteTimeLeft : speaker2NoteTimeLeft;
     }
-    HAL_Delay(delay * 3);
+    HAL_Delay(delay);
     speaker1NoteTimeLeft -= delay;
     speaker2NoteTimeLeft -= delay;
   }
