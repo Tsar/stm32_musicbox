@@ -1,7 +1,11 @@
-#ifndef _MUSICBOX_H_
-#define _MUSICBOX_H_
+#ifndef _MUSICBOX_HPP_
+#define _MUSICBOX_HPP_
 
 #include <main.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 void startMusic(
     TIM_HandleTypeDef* timer1,
@@ -10,4 +14,8 @@ void startMusic(
     int timer2Channel
 );
 
-#endif /* _MUSICBOX_H_ */
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* _MUSICBOX_HPP_ */

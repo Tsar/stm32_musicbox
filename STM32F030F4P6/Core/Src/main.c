@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <musicbox.h>
+#include <musicbox.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

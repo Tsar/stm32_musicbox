@@ -1,5 +1,5 @@
-#ifndef _NOTE_FREQUENCY_H_
-#define _NOTE_FREQUENCY_H_
+#ifndef _NOTE_FREQUENCY_HPP_
+#define _NOTE_FREQUENCY_HPP_
 
 /*
  * Python code to get frequency of notes:
@@ -57,4 +57,4 @@
 #define SOL_D_3 1661
 #define LA_3    1760
 
-#endif /* _NOTE_FREQUENCY_H_ */
+#endif /* _NOTE_FREQUENCY_HPP_ */

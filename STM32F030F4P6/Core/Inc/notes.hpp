@@ -1,7 +1,7 @@
-#ifndef _NOTES_H_
-#define _NOTES_H_
+#ifndef _NOTES_HPP_
+#define _NOTES_HPP_
 
-#include <note_frequency.h>
+#include <note_frequency.hpp>
 
 typedef struct {
   uint16_t frequency;  // Hz
@@ -49,4 +49,4 @@ const Note voice2[] = {
     {LA_1, 100},
 };
 
-#endif /* _NOTES_H_ */
+#endif /* _NOTES_HPP_ */
