@@ -42,6 +42,7 @@ void startMusic(
   int speaker2NoteNum = -1;
   uint16_t speaker1NoteTimeLeft = 0;
   uint16_t speaker2NoteTimeLeft = 0;
+
   while (speaker1NoteNum < VOICE1_NOTES_COUNT || speaker2NoteNum < VOICE2_NOTES_COUNT) {
     processSpeaker(timer1, timer1Channel, voice1, VOICE1_NOTES_COUNT, speaker1NoteNum, speaker1NoteTimeLeft, speaker1State);
     processSpeaker(timer2, timer2Channel, voice2, VOICE2_NOTES_COUNT, speaker2NoteNum, speaker2NoteTimeLeft, speaker2State);
@@ -52,6 +53,7 @@ void startMusic(
     } else {
       delay = (speaker1NoteNum < VOICE1_NOTES_COUNT) ? speaker1NoteTimeLeft : speaker2NoteTimeLeft;
     }
+
     HAL_Delay(delay);
     speaker1NoteTimeLeft -= delay;
     speaker2NoteTimeLeft -= delay;
