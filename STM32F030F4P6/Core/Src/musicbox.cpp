@@ -1,5 +1,7 @@
 #include <musicbox.hpp>
 
+#include <algorithm>
+
 #include <notes.hpp>
 
 void processSpeaker(TIM_HandleTypeDef* timer, int timerChannel, const Note* notes, int notesCount, int& noteNum, uint16_t& noteTimeLeft, uint8_t& speakerState) {
@@ -44,7 +46,12 @@ void startMusic(
     processSpeaker(timer1, timer1Channel, voice1, VOICE1_NOTES_COUNT, speaker1NoteNum, speaker1NoteTimeLeft, speaker1State);
     processSpeaker(timer2, timer2Channel, voice2, VOICE2_NOTES_COUNT, speaker2NoteNum, speaker2NoteTimeLeft, speaker2State);
 
-    uint16_t delay = speaker1NoteTimeLeft < speaker2NoteTimeLeft ? speaker1NoteTimeLeft : speaker2NoteTimeLeft;
+    uint16_t delay;
+    if (speaker1NoteNum < VOICE1_NOTES_COUNT && speaker2NoteNum < VOICE2_NOTES_COUNT) {
+      delay = std::min(speaker1NoteTimeLeft, speaker2NoteTimeLeft);
+    } else {
+      delay = (speaker1NoteNum < VOICE1_NOTES_COUNT) ? speaker1NoteTimeLeft : speaker2NoteTimeLeft;
+    }
     HAL_Delay(delay * 3);
     speaker1NoteTimeLeft -= delay;
     speaker2NoteTimeLeft -= delay;
